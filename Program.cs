@@ -15,10 +15,12 @@ class Program
         var consoleTextHandler = new ConsoleHandler(new TextFormatStrategy());
         var consoleJsonHandler = new ConsoleHandler(new JsonFormatStrategy());
         var fileHtmlHandler = new FileHandler(new HtmlFormatStrategy(), "alerts.html");
+        var emailHandler = new EmailHandler(new TextFormatStrategy(), "team@example.com");
 
         monitor.OnMetricExceeded += consoleTextHandler.ProcessEvent;
         monitor.OnMetricExceeded += consoleJsonHandler.ProcessEvent;
         monitor.OnMetricExceeded += fileHtmlHandler.ProcessEvent;
+        monitor.OnMetricExceeded += emailHandler.ProcessEvent;  
 
         Console.WriteLine("--- Проверка метрик ---");
         monitor.CheckMetric("CPU", 85.5, 80.0);

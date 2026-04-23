@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Delegates\MetricEventHandler.cs" />
     <Compile Include="Handlers\ConsoleHandler.cs" />
+    <Compile Include="Handlers\EmailHandler.cs" />
     <Compile Include="Handlers\EventHandlerBase.cs" />
     <Compile Include="Handlers\FileHandler.cs" />
     <Compile Include="Models\MetricData.cs" />

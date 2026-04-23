@@ -11,6 +11,9 @@ namespace MonitoringSystem.Handlers
         public FileHandler(IFormatStrategy strategy, string filePath) : base(strategy)
         {
             _filePath = filePath;
+            string directory = Path.GetDirectoryName(_filePath);
+            if (!string.IsNullOrEmpty(directory))
+                Directory.CreateDirectory(directory);
         }
 
         protected override void SendMessage(string message)
